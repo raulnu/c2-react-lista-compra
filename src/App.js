@@ -9,7 +9,7 @@ import { PaginaLista } from "./paginas/PaginaLista";
 import { PaginaFormulario } from "./paginas/PaginaFormulario";
 import { PaginaAcercaDe } from "./paginas/PaginaAcercaDe";
 import { Cabecera } from "./components/Cabecera";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ContextoGeneral } from "./contexts/ContextoGeneral";
 
 function App() {
@@ -23,6 +23,9 @@ function App() {
     const datosResp = await resp.json();
     setArrayListado(datosResp);
   };
+  useEffect(() => {
+    llamadaAPI();
+  }, []);
 
   return (
     <>
@@ -40,7 +43,7 @@ function App() {
               <PaginaAcercaDe />
             </Route>
             <Route path="/lista" exact>
-              <PaginaLista />
+              <PaginaLista arrayListado={arrayListado} />
             </Route>
             <Route path="/" exact>
               <Redirect to="/principal" />

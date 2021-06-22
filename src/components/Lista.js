@@ -1,7 +1,9 @@
-import { FaPlusCircle, FaTimes } from "react-icons/fa";
+import { FaPlusCircle } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
+import { Elemento } from "./Elemento";
 
-export const Lista = () => {
+export const Lista = (props) => {
+  const { arrayListado } = props;
   return (
     <>
       <section className="info espaciado bloque-superior">
@@ -14,29 +16,9 @@ export const Lista = () => {
       </section>
       <main className="principal espaciado">
         <ul className="articulos">
-          <li className="articulo">
-            <input type="checkbox" className="marcar" />
-            <span className="nombre">Pan</span>
-            <span className="precio">0.75€</span>
-            <i className="borrar">
-              <FaTimes />
-            </i>
-          </li>
-          <li className="articulo">
-            <input type="checkbox" className="marcar" />
-            <span className="nombre">Azúcar</span>
-            <i className="borrar">
-              <FaTimes />
-            </i>
-          </li>
-          <li className="articulo">
-            <input type="checkbox" className="marcar" />
-            <span className="nombre">Leche</span>
-            <span className="precio">1.20€</span>
-            <i className="borrar">
-              <FaTimes />
-            </i>
-          </li>
+          {arrayListado.map((elemento) => (
+            <Elemento key={elemento.id} elemento={elemento} />
+          ))}
         </ul>
         <span className="precio-total">1.95€</span>
       </main>
