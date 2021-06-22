@@ -20,7 +20,11 @@ export const Lista = (props) => {
             <Elemento key={elemento.id} elemento={elemento} />
           ))}
         </ul>
-        <span className="precio-total">1.95€</span>
+        <span className="precio-total">
+          {arrayListado
+            .filter((elemento) => elemento.precio !== null)
+            .reduce((acumulador, { precio }) => acumulador + precio, 0)}
+        </span>
       </main>
     </>
   );
