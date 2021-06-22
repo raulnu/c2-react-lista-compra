@@ -1,8 +1,12 @@
+import { FaMinusCircle } from "react-icons/fa";
+
 export const Formulario = () => {
   return (
     <>
       <section className="info espaciado bloque-superior">
-        <i className="icono fas fa-minus-circle"></i>
+        <i className="icono">
+          <FaMinusCircle />
+        </i>
         <p className="n-articulos">2/3 comprados</p>
       </section>
       <main className="principal espaciado">
