@@ -1,11 +1,14 @@
 import { FaMinusCircle } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
 
 export const Formulario = () => {
   return (
     <>
       <section className="info espaciado bloque-superior">
         <i className="icono">
-          <FaMinusCircle />
+          <NavLink to="/lista">
+            <FaMinusCircle />
+          </NavLink>
         </i>
         <p className="n-articulos">2/3 comprados</p>
       </section>
