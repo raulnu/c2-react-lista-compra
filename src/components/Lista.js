@@ -1,11 +1,14 @@
 import { FaPlusCircle, FaTimes } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
 
 export const Lista = () => {
   return (
     <>
       <section className="info espaciado bloque-superior">
         <i className="icono">
-          <FaPlusCircle />{" "}
+          <NavLink to="/formulario">
+            <FaPlusCircle />
+          </NavLink>
         </i>
         <p className="n-articulos">2/3 comprados</p>
       </section>
